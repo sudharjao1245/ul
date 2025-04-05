@@ -26,6 +26,7 @@ from pyUltroid.startup._database import _BaseDatabase as Database
 from pyUltroid.version import __version__, ultroid_version
 from strings import get_help, get_string
 from catbox import CatboxUploader
+from telegraph import Telegraph
 
 udB: Database
 
@@ -50,7 +51,8 @@ def inline_pic():
     return INLINE_PIC
 
 
-Telegraph = telegraph_client()
+Telegraph = Telegraph()
+Telegraph.create_account(short_name="UltroidBot")
 cat_uploader = CatboxUploader()
 
 upload_file = cat_uploader.upload_file
