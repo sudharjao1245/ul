@@ -9,3 +9,5 @@ requests
 aiohttp
 catbox-uploader
 cloudscraper
+flask
+gunicorn
