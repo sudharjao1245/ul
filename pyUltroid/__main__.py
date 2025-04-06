@@ -12,6 +12,20 @@ def main():
     import os
     import sys
     import time
+    from threading import Thread
+    from flask import Flask
+
+    # Flask server for startup status
+    def run_flask():
+        flask_app = Flask(__name__)
+
+        @flask_app.route("/")
+        def hello_world():
+            return "This is Monu"
+
+        flask_app.run(host="0.0.0.0", port=8080)
+
+    Thread(target=run_flask, daemon=True).start()
 
     from .fns.helper import bash, time_formatter, updater
     from .startup.funcs import (
