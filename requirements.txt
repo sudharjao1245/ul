@@ -11,3 +11,4 @@ catbox-uploader
 cloudscraper
 flask
 gunicorn
+gitpython
